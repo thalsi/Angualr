@@ -1,59 +1,658 @@
-# Project
+# Angular 22 Learning Checklist
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.0.8.
+## 🎯 Recommended Priority
 
-## Development server
+### 🔴 MUST MASTER
+- [ ] TypeScript
+- [ ] Components
+- [ ] Standalone Components
+- [ ] Dependency Injection
+- [ ] Routing
+- [ ] RxJS
+- [ ] Signals ⭐⭐⭐
+- [ ] @if / @for / @switch
+- [ ] HTTP / Interceptors
+- [ ] Reactive Forms
+- [ ] Signal Forms
+- [ ] State Management
+- [ ] Performance
+- [ ] Testing
 
-To start a local development server, run:
+### 🟠 MUST KNOW
+- [ ] Resource API
+- [ ] httpResource()
+- [ ] input() / output()
+- [ ] linkedSignal()
+- [ ] effect()
+- [ ] Change Detection
+- [ ] OnPush
+- [ ] Lazy Loading
+- [ ] @defer
+- [ ] Angular CDK
+- [ ] Security
 
-```bash
+### 🟡 ADVANCED
+- [ ] SSR
+- [ ] SSG
+- [ ] Hydration
+- [ ] Incremental Hydration
+- [ ] Zoneless
+- [ ] Angular Aria
+- [ ] Route-level render mode
+- [ ] Advanced performance
+- [ ] Custom rendering
+- [ ] Advanced testing
+
+### 🧭 Best Learning Order (coming from Angular 12)
+1. Standalone Components
+2. inject()
+3. input() / output()
+4. @if / @for / @switch
+5. Signals ⭐⭐⭐
+6. computed()
+7. effect()
+8. linkedSignal()
+9. Signals + RxJS
+10. Reactive Forms
+11. Signal Forms
+12. HTTP + Interceptors
+13. Resource
+14. httpResource
+15. Routing + Lazy Loading
+16. NgRx / Signal Store
+17. OnPush + Change Detection
+18. Zoneless
+19. @defer
+20. SSR + SSG
+21. Hydration
+22. Incremental Hydration
+23. Testing + Vitest
+24. Performance
+25. Security
+
+---
+
+## 🟢 1. Angular Fundamentals — Must Know
+- [x] Angular CLI
+- [ ] Project structure
+- [ ] Components
+- [ ] Templates
+- [ ] Data binding
+  - [ ] Interpolation `{{ }}`
+  - [ ] Property binding `[ ]`
+  - [ ] Event binding `( )`
+  - [ ] Two-way binding `[( )]`
+- [ ] Directives
+- [ ] Pipes
+- [ ] Services
+- [ ] Dependency Injection
+- [ ] Lifecycle hooks
+- [ ] ViewChild / ContentChild
+- [ ] Content projection
+- [ ] Component communication
+
+---
+
+## ⭐ 2. Standalone Architecture
+> Very important for Angular 22.
+
+- [ ] Standalone Components
+- [ ] Standalone Directives
+- [ ] Standalone Pipes
+- [ ] `imports: []`
+- [ ] `bootstrapApplication()`
+- [ ] `ApplicationConfig`
+- [ ] Providers
+- [ ] `provideRouter()`
+- [ ] `provideHttpClient()`
+
+**Old:**
+```
+AppModule
+ ├── declarations
+ ├── imports
+ └── providers
+```
+
+**Modern:**
+```
+main.ts
+   ↓
+bootstrapApplication()
+   ↓
+Standalone Components
+```
+
+---
+
+## ⭐⭐⭐ 3. Signals
+> One of the most important topics in Angular 22.
+
+Learn in this order:
+- [ ] `signal()`
+- [ ] `computed()`
+- [ ] `effect()`
+- [ ] `WritableSignal`
+- [ ] Read / write / update
+- [ ] Signal inputs
+- [ ] Signal outputs
+- [ ] `linkedSignal()`
+- [ ] Signals + components
+- [ ] Signals + services
+- [ ] Signals + RxJS
+
+```ts
+count = signal(0);
+
+doubleCount = computed(() => this.count() * 2);
+
+increment() {
+  this.count.update(value => value + 1);
+}
+```
+
+---
+
+## ⭐⭐⭐ 4. New Template Control Flow
+
+**Old Angular:**
+```html
+<div *ngIf="isLoggedIn">
+  Welcome
+</div>
+```
+
+**Angular 22:**
+```html
+@if (isLoggedIn) {
+  <div>Welcome</div>
+}
+```
+
+- [ ] `@if`
+- [ ] `@else`
+- [ ] `@else if`
+- [ ] `@for`
+- [ ] `track`
+- [ ] `@empty`
+- [ ] `@switch`
+- [ ] `@case`
+- [ ] `@default`
+- [ ] `@defer`
+- [ ] `@placeholder`
+- [ ] `@loading`
+- [ ] `@error`
+
+```html
+@for (user of users; track user.id) {
+  <p>{{ user.name }}</p>
+} @empty {
+  <p>No users</p>
+}
+```
+
+---
+
+## ⭐⭐⭐ 5. Dependency Injection
+- [ ] `inject()`
+- [ ] Services
+- [ ] Providers
+- [ ] `providedIn: 'root'`
+- [ ] Component providers
+- [ ] Injection tokens
+- [ ] `InjectionToken`
+- [ ] Provider configuration
+  - [ ] `useClass`
+  - [ ] `useValue`
+  - [ ] `useFactory`
+  - [ ] `useExisting`
+
+**Modern Angular:**
+```ts
+private userService = inject(UserService);
+```
+
+---
+
+## ⭐⭐⭐ 6. Routing
+- [ ] `provideRouter()`
+- [ ] Routes
+- [ ] `routerLink`
+- [ ] `Router`
+- [ ] Route parameters
+- [ ] Query parameters
+- [ ] Child routes
+- [ ] Lazy loading
+- [ ] Route guards
+- [ ] Resolvers
+- [ ] Route data
+- [ ] Redirects
+- [ ] Wildcard routes
+- [ ] Preloading
+- [ ] Route-level providers
+- [ ] Route-level render mode
+
+```ts
+export const routes: Routes = [
+  {
+    path: 'users',
+    loadComponent: () =>
+      import('./users/users.component')
+        .then(m => m.UsersComponent)
+  }
+];
+```
+
+---
+
+## ⭐⭐⭐ 7. RxJS
+> Don't skip this, even though Angular is moving toward Signals.
+
+**Core**
+- [ ] Observable
+- [ ] Observer
+- [ ] Subscription
+- [ ] Subject
+- [ ] BehaviorSubject
+- [ ] ReplaySubject
+- [ ] AsyncSubject
+
+**Operators**
+- [ ] map
+- [ ] filter
+- [ ] tap
+- [ ] switchMap
+- [ ] mergeMap
+- [ ] concatMap
+- [ ] exhaustMap
+- [ ] catchError
+- [ ] finalize
+- [ ] debounceTime
+- [ ] distinctUntilChanged
+- [ ] combineLatest
+- [ ] forkJoin
+- [ ] withLatestFrom
+- [ ] shareReplay
+
+**Angular + RxJS**
+- [ ] `toSignal()`
+- [ ] `toObservable()`
+- [ ] `takeUntilDestroyed()`
+- [ ] AsyncPipe
+
+---
+
+## ⭐⭐⭐ 8. HTTP / API
+- [ ] HttpClient
+- [ ] GET
+- [ ] POST
+- [ ] PUT
+- [ ] PATCH
+- [ ] DELETE
+- [ ] HTTP headers
+- [ ] Query parameters
+- [ ] Interceptors
+- [ ] Error handling
+- [ ] Retry
+- [ ] Authentication token
+- [ ] Loading state
+- [ ] API services
+
+> `httpResource()` is stable since Angular 22 and exposes HTTP request state/results as signals.
+
+---
+
+## ⭐⭐⭐ 9. Resource API
+> `resource()` is stable since Angular 22, designed for asynchronous read operations managed through signals.
+
+- [ ] `resource()`
+- [ ] Resource
+- [ ] params
+- [ ] loader
+- [ ] `value()`
+- [ ] `isLoading()`
+- [ ] `error()`
+- [ ] `status()`
+- [ ] `hasValue()`
+- [ ] `reload()`
+- [ ] AbortSignal
+- [ ] Resource + Signals
+- [ ] Resource + SSR
+
+---
+
+## ⭐⭐⭐ 10. httpResource()
+> Learn separately from normal HttpClient.
+
+```
+HttpClient
+    ↓
+Observable
+
+vs
+
+httpResource()
+    ↓
+Signal-based HTTP state
+```
+
+- [ ] GET request
+- [ ] Reactive URL
+- [ ] Loading
+- [ ] Error
+- [ ] Response value
+- [ ] `hasValue()`
+- [ ] `isLoading()`
+- [ ] Interceptors
+- [ ] Testing
+- [ ] SSR/Transfer cache
+
+> Angular docs recommend normal HttpClient for mutations (POST/PUT) rather than httpResource().
+
+---
+
+## ⭐⭐⭐ 11. Forms
+
+**Traditional Forms**
+- [ ] Template-driven Forms
+- [ ] Reactive Forms
+- [ ] FormControl
+- [ ] FormGroup
+- [ ] FormArray
+- [ ] Validators
+- [ ] Custom validators
+- [ ] Async validators
+- [ ] Dynamic forms
+- [ ] Custom form controls
+- [ ] ControlValueAccessor
+
+**Modern Signal Forms**
+- [ ] `form()`
+- [ ] FieldTree
+- [ ] FormField
+- [ ] `schema()`
+- [ ] `required()`
+- [ ] Validation
+- [ ] Custom validation
+- [ ] Async validation
+- [ ] Model ↔ form synchronization
+
+> Signal Forms are stable in Angular 22, built around a signal-based model.
+> For existing Angular 12 enterprise projects: Reactive Forms still matters. For new Angular 22 projects, also learn Signal Forms.
+
+---
+
+## ⭐⭐ 12. Component Communication
+
+```
+Parent
+  ↓
+input()
+
+Child
+  ↓
+output()
+
+Parent
+```
+
+- [ ] `input()`
+- [ ] `input.required()`
+- [ ] `output()`
+- [ ] Model inputs / two-way binding
+- [ ] Signal inputs
+- [ ] Content projection
+- [ ] Services for shared state
+
+---
+
+## ⭐⭐⭐ 13. State Management
+
+```
+Component State
+      ↓
+Signals
+      ↓
+Services
+      ↓
+RxJS
+      ↓
+NgRx
+```
+
+- [ ] Local Signals
+- [ ] Shared Signals
+- [ ] Signal-based services
+- [ ] RxJS state
+- [ ] NgRx Store
+- [ ] Actions
+- [ ] Reducers
+- [ ] Selectors
+- [ ] Effects
+- [ ] Entity
+- [ ] Signal Store
+
+> For large enterprise applications, NgRx is still worth learning.
+
+---
+
+## ⭐⭐ 14. Lifecycle
+- [ ] `ngOnInit`
+- [ ] `ngOnChanges`
+- [ ] `ngOnDestroy`
+- [ ] `ngAfterViewInit`
+- [ ] `ngAfterContentInit`
+- [ ] `DestroyRef`
+- [ ] `afterNextRender`
+- [ ] `afterEveryRender`
+
+---
+
+## ⭐⭐⭐ 15. SSR / SSG
+
+**SSR**
+```
+Browser
+ ↓
+Server
+ ↓
+HTML
+ ↓
+Browser
+```
+
+**SSG / Prerender**
+```
+Build time
+ ↓
+HTML generated
+ ↓
+CDN
+ ↓
+User
+```
+
+- [ ] Angular SSR
+- [ ] SSG / Prerendering
+- [ ] Hydration
+- [ ] Incremental hydration
+- [ ] TransferState
+- [ ] Server routes
+- [ ] Browser/server differences
+- [ ] SEO
+- [ ] Meta tags
+- [ ] Canonical URLs
+- [ ] `@defer`
+- [ ] Route-level rendering
+
+> Hydration reuses the server-rendered DOM instead of recreating it, helping performance and Core Web Vitals.
+
+---
+
+## ⭐⭐⭐ 16. Zoneless
+
+```
+Zone.js
+   ↓
+Change Detection
+
+versus:
+
+Signals / Events
+       ↓
+Angular
+       ↓
+Targeted updates
+```
+
+- [ ] What is Zone.js?
+- [ ] Traditional change detection
+- [ ] OnPush
+- [ ] Signals
+- [ ] Zoneless
+- [ ] `provideZonelessChangeDetection()`
+- [ ] How Signals trigger updates
+- [ ] Performance implications
+
+---
+
+## ⭐⭐ 17. Change Detection
+- [ ] Default change detection
+- [ ] OnPush
+- [ ] `ChangeDetectorRef`
+- [ ] `markForCheck()`
+- [ ] `detectChanges()`
+- [ ] Signals and change detection
+- [ ] Zoneless change detection
+
+---
+
+## ⭐⭐ 18. Angular Animations
+- [ ] CSS animations
+- [ ] Angular animation APIs
+- [ ] Enter/leave animations
+- [ ] Animation triggers
+- [ ] Transitions
+
+> For many modern UI projects, CSS animations are sufficient, but understand Angular's animation ecosystem too.
+
+---
+
+## ⭐⭐ 19. Angular CDK
+- [ ] Overlay
+- [ ] Dialog
+- [ ] Portal
+- [ ] Drag & Drop
+- [ ] Virtual Scroll
+- [ ] Clipboard
+- [ ] Accessibility
+- [ ] Scrolling
+- [ ] Layout utilities
+
+---
+
+## ⭐⭐ 20. Angular Aria
+- [ ] Accessibility
+- [ ] Keyboard navigation
+- [ ] ARIA roles
+- [ ] Tabs
+- [ ] Menu
+- [ ] Combobox
+- [ ] Listbox
+- [ ] Dialog
+- [ ] Accordion
+
+---
+
+## ⭐⭐ 21. Testing
+- [ ] Unit testing
+- [ ] TestBed
+- [ ] Component testing
+- [ ] Service testing
+- [ ] HTTP testing
+- [ ] Router testing
+- [ ] Signal testing
+- [ ] httpResource testing
+- [ ] Vitest
+- [ ] E2E testing
+
+---
+
+## ⭐⭐ 22. Performance
+- [ ] Lazy loading
+- [ ] `@defer`
+- [ ] `@for` track
+- [ ] OnPush
+- [ ] Signals
+- [ ] Zoneless
+- [ ] SSR
+- [ ] SSG
+- [ ] Hydration
+- [ ] Incremental hydration
+- [ ] Bundle optimization
+- [ ] Image optimization
+- [ ] Virtual scrolling
+
+---
+
+## ⭐ 23. Security
+> Must know for enterprise projects.
+
+- [ ] XSS
+- [ ] Sanitization
+- [ ] DomSanitizer
+- [ ] CSP
+- [ ] CORS
+- [ ] Authentication
+- [ ] Authorization
+- [ ] JWT
+- [ ] Interceptors
+- [ ] Route Guards
+- [ ] Secure storage concepts
+
+---
+
+## ⭐ 24. Angular CLI / Build
+
+```
+ng new
 ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
 ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
 ng test
+ng generate
+ng update
+ng add
 ```
 
-## Running end-to-end tests
+- [ ] `angular.json`
+- [ ] tsconfig
+- [ ] environments
+- [ ] production builds
+- [ ] build configurations
+- [ ] lazy chunks
+- [ ] source maps
+- [ ] budgets
+- [ ] Vite
+- [ ] esbuild
 
-For end-to-end (e2e) testing, run:
+---
 
-```bash
-ng e2e
-```
+## ⭐⭐⭐ 25. TypeScript
+> For Angular 22, TypeScript should be strong.
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- [ ] Interfaces
+- [ ] Types
+- [ ] Generics
+- [ ] Union
+- [ ] Intersection
+- [ ] Type guards
+- [ ] `keyof`
+- [ ] `typeof`
+- [ ] Utility types
+- [ ] Enums
+- [ ] Classes
+- [ ] Decorators
+- [ ] Optional chaining
+- [ ] Nullish coalescing
+- [ ] Async/await
+- [ ] Promises
