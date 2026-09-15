@@ -4,7 +4,7 @@ import { RouterLink } from '@angular/router';
 @Component({
   standalone:true,
   imports: [
-    RouterLink
+    
   ],
   selector: 'app-products-list',
   styleUrl: './products-list.css',

@@ -74,22 +74,22 @@
 
 ## 🟢 1. Angular Fundamentals — Must Know
 - [x] Angular CLI
-- [ ] Project structure
-- [ ] Components
-- [ ] Templates
-- [ ] Data binding
-  - [ ] Interpolation `{{ }}`
-  - [ ] Property binding `[ ]`
-  - [ ] Event binding `( )`
-  - [ ] Two-way binding `[( )]`
-- [ ] Directives
-- [ ] Pipes
-- [ ] Services
-- [ ] Dependency Injection
-- [ ] Lifecycle hooks
-- [ ] ViewChild / ContentChild
-- [ ] Content projection
-- [ ] Component communication
+- [x] Project structure
+- [x] Components
+- [x] Templates
+- [x] Data binding
+  - [x] Interpolation `{{ }}`
+  - [x] Property binding `[ ]`
+  - [x] Event binding `( )`
+  - [x] Two-way binding `[( )]`
+- [x] Directives
+- [x] Pipes
+- [x] Services
+- [x] Dependency Injection
+- [x] Lifecycle hooks
+- [x] ViewChild / ContentChild
+- [X] Content projection
+- [X] Component communication
 
 ---
 
