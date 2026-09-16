@@ -96,15 +96,15 @@
 ## ⭐ 2. Standalone Architecture
 > Very important for Angular 22.
 
-- [ ] Standalone Components
-- [ ] Standalone Directives
-- [ ] Standalone Pipes
-- [ ] `imports: []`
-- [ ] `bootstrapApplication()`
-- [ ] `ApplicationConfig`
-- [ ] Providers
-- [ ] `provideRouter()`
-- [ ] `provideHttpClient()`
+- [X] Standalone Components
+- [X] Standalone Directives
+- [x] Standalone Pipes
+- [X] `imports: []`
+- [X] `bootstrapApplication()`
+- [X] `ApplicationConfig`
+- [X] Providers
+- [X] `provideRouter()`
+- [X] `provideHttpClient()`
 
 **Old:**
 ```
