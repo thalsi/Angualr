@@ -11,5 +11,9 @@ export const LERAN_ROUTES:Routes = [
         loadComponent: () =>
           import('./fundamentals/fundamentals')
             .then(m => m.Fundamentals)
+    },
+    {
+        path:'rxjs',
+        loadComponent: () => import('./rxjs/rxjs').then(m=>m.Rxjs)
     }
 ]
