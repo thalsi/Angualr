@@ -249,30 +249,30 @@ export const routes: Routes = [
 > Don't skip this, even though Angular is moving toward Signals.
 
 **Core**
-- [ ] Observable
-- [ ] Observer
-- [ ] Subscription
-- [ ] Subject
-- [ ] BehaviorSubject
-- [ ] ReplaySubject
-- [ ] AsyncSubject
+- [x] Observable
+- [x] Observer
+- [x] Subscription
+- [x] Subject
+- [x] BehaviorSubject
+- [x] ReplaySubject
+- [x] AsyncSubject
 
 **Operators**
-- [ ] map
-- [ ] filter
-- [ ] tap
-- [ ] switchMap
-- [ ] mergeMap
-- [ ] concatMap
-- [ ] exhaustMap
-- [ ] catchError
-- [ ] finalize
-- [ ] debounceTime
-- [ ] distinctUntilChanged
-- [ ] combineLatest
-- [ ] forkJoin
-- [ ] withLatestFrom
-- [ ] shareReplay
+- [x] map
+- [x] filter
+- [x] tap
+- [x] switchMap
+- [x] mergeMap
+- [x] concatMap
+- [x] exhaustMap
+- [x] catchError
+- [x] finalize
+- [x] debounceTime
+- [x] distinctUntilChanged
+- [x] combineLatest
+- [x] forkJoin
+- [x] withLatestFrom
+- [x] shareReplay
 
 **Angular + RxJS**
 - [ ] `toSignal()`
@@ -354,17 +354,17 @@ Signal-based HTTP state
 ## ⭐⭐⭐ 11. Forms
 
 **Traditional Forms**
-- [ ] Template-driven Forms
-- [ ] Reactive Forms
-- [ ] FormControl
-- [ ] FormGroup
-- [ ] FormArray
-- [ ] Validators
-- [ ] Custom validators
-- [ ] Async validators
-- [ ] Dynamic forms
-- [ ] Custom form controls
-- [ ] ControlValueAccessor
+- [x] Template-driven Forms
+- [x] Reactive Forms
+- [x] FormControl
+- [x] FormGroup
+- [x] FormArray
+- [x] Validators
+- [x] Custom validators
+- [x] Async validators
+- [x] Dynamic forms
+- [x] Custom form controls
+- [x] ControlValueAccessor
 
 **Modern Signal Forms**
 - [ ] `form()`
@@ -624,35 +624,35 @@ ng update
 ng add
 ```
 
-- [ ] `angular.json`
-- [ ] tsconfig
-- [ ] environments
-- [ ] production builds
-- [ ] build configurations
-- [ ] lazy chunks
-- [ ] source maps
-- [ ] budgets
-- [ ] Vite
-- [ ] esbuild
+- [x] `angular.json`
+- [x] tsconfig
+- [x] environments
+- [x] production builds
+- [x] build configurations
+- [x] lazy chunks
+- [x] source maps
+- [x] budgets
+- [x] Vite
+- [x] esbuild
 
 ---
 
 ## ⭐⭐⭐ 25. TypeScript
 > For Angular 22, TypeScript should be strong.
 
-- [ ] Interfaces
-- [ ] Types
-- [ ] Generics
-- [ ] Union
-- [ ] Intersection
-- [ ] Type guards
-- [ ] `keyof`
-- [ ] `typeof`
-- [ ] Utility types
-- [ ] Enums
-- [ ] Classes
-- [ ] Decorators
-- [ ] Optional chaining
-- [ ] Nullish coalescing
-- [ ] Async/await
-- [ ] Promises
+- [x] Interfaces
+- [x] Types
+- [x] Generics
+- [x] Union
+- [x] Intersection
+- [x] Type guards
+- [x] `keyof`
+- [x] `typeof`
+- [x] Utility types
+- [x] Enums
+- [x] Classes
+- [x] Decorators
+- [x] Optional chaining
+- [x] Nullish coalescing
+- [x] Async/await
+- [x] Promises
