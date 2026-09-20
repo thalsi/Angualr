@@ -15,5 +15,9 @@ export const LERAN_ROUTES:Routes = [
     {
         path:'rxjs',
         loadComponent: () => import('./rxjs/rxjs').then(m=>m.Rxjs)
+    },
+    {
+        path:'signal',
+        loadComponent: () => import('./signal/signal').then(c=>c.Signal)
     }
 ]
