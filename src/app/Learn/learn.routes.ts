@@ -23,5 +23,9 @@ export const LERAN_ROUTES:Routes = [
     {
         path:'new-template-control-flow',
         loadComponent: () => import('./new-template-control-flow/new-template-control-flow').then(c=>c.NewTemplateControlFlow)
+    },
+    {
+        path:'dependency-injection',
+        loadComponent: () => import('./dependency-injection/dependency-injection').then(c=>c.DependencyInjection)
     }
 ]
