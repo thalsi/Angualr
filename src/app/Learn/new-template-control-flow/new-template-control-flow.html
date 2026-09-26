@@ -1,0 +1,48 @@
+@defer {
+    <app-test-comp></app-test-comp>
+} @placeholder {
+    Loading...
+} @loading {
+    <p style="color: red;">Data Feathing...</p>
+}
+
+
+@if (isFlag()) {
+    <p>Flag is TURE</p>
+} @else {
+    <p>Flag is FALSE</p>
+} 
+
+@for (user of users; track user.id) {
+  <p>{{ user.name }}</p>
+}
+
+@for (user of emtyusers; track user.id) {
+  <p>{{ user.name }}</p>
+} @empty  {
+    <p>User Array is empty</p>
+}
+
+
+@switch (status) {
+
+  @case ('active') {
+    <p>Active</p>
+  }
+
+  @case ('inactive') {
+    <p>Inactive</p>
+  }
+
+  @default {
+    <p>Unknown</p>
+  }
+
+}
+
+@defer (on hover) {
+  <app-test-comp />
+} @placeholder {
+  <div>Hover here</div>
+}
+

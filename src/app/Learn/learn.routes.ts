@@ -19,5 +19,9 @@ export const LERAN_ROUTES:Routes = [
     {
         path:'signal',
         loadComponent: () => import('./signal/signal').then(c=>c.Signal)
+    },
+    {
+        path:'new-template-control-flow',
+        loadComponent: () => import('./new-template-control-flow/new-template-control-flow').then(c=>c.NewTemplateControlFlow)
     }
 ]

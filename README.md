@@ -129,17 +129,17 @@ Standalone Components
 > One of the most important topics in Angular 22.
 
 Learn in this order:
-- [ ] `signal()`
-- [ ] `computed()`
-- [ ] `effect()`
-- [ ] `WritableSignal`
-- [ ] Read / write / update
-- [ ] Signal inputs
-- [ ] Signal outputs
-- [ ] `linkedSignal()`
-- [ ] Signals + components
-- [ ] Signals + services
-- [ ] Signals + RxJS
+- [X] `signal()`
+- [X] `computed()`
+- [X] `effect()`
+- [X] `WritableSignal`
+- [X] Read / write / update
+- [X] Signal inputs
+- [x] Signal outputs
+- [x] `linkedSignal()`
+- [x] Signals + components
+- [x] Signals + services
+- [x] Signals + RxJS
 
 ```ts
 count = signal(0);
