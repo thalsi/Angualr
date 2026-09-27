@@ -27,5 +27,9 @@ export const LERAN_ROUTES:Routes = [
     {
         path:'dependency-injection',
         loadComponent: () => import('./dependency-injection/dependency-injection').then(c=>c.DependencyInjection)
-    }
+    },
+    {
+        path:'http-api',
+        loadComponent: () => import('./http-api/http-api').then(c=>c.HttpApi)
+    },
 ]
