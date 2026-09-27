@@ -1,0 +1,16 @@
+<h1>Without resource()</h1>
+
+
+@if (usersResource.isLoading()) {
+  <p>Loading...</p>
+}
+
+@if (usersResource.error()) {
+  <p>Error: {{ usersResource.error() }}</p>
+}
+
+@if (usersResource.value(); as userList) {
+  @for (user of userList; track user.id) {
+    <p>{{ user.name }}</p>
+  }
+}

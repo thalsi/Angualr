@@ -280,6 +280,14 @@ export const routes: Routes = [
 - [ ] `takeUntilDestroyed()`
 - [ ] AsyncPipe
 
+| Type                | What it does                                               | Real-world use                                       |
+| ------------------- | ---------------------------------------------------------- | ---------------------------------------------------- |
+| **Observable**      | Provides a data stream                                     | API, HTTP requests, timers, events                   |
+| **Subject**         | Manually broadcasts data to multiple subscribers           | Component-to-component events, refresh events        |
+| **BehaviorSubject** | Stores and provides the latest/current value               | Logged-in user, theme, language, application state   |
+| **ReplaySubject**   | Stores previous values and replays them to new subscribers | Recent notifications, message history, event history |
+| **AsyncSubject**    | Emits only the final value when the process completes      | Final result after a process completes               |
+
 ---
 
 ## ⭐⭐⭐ 8. HTTP / API

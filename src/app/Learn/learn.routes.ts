@@ -32,4 +32,8 @@ export const LERAN_ROUTES:Routes = [
         path:'http-api',
         loadComponent: () => import('./http-api/http-api').then(c=>c.HttpApi)
     },
+    {
+        path:'resource',
+        loadComponent: () => import('./resource/resource').then(c=>c.Resource)
+    },
 ]
