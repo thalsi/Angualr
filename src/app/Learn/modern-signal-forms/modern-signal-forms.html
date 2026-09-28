@@ -1,0 +1,34 @@
+<h2>User Form</h2>
+
+<label>Name</label>
+<br>
+<input [formField]="userForm.name">
+
+@if (userForm.name().invalid()) {
+  <small>Name is required</small>
+}
+
+<br><br>
+
+<label>Email</label>
+<br>
+<input type="email" [formField]="userForm.email">
+
+@if (userForm.email().invalid()) {
+  <small>Email is required or invalid</small>
+}
+
+<br><br>
+
+<button type="button" (click)="setUserData()">
+  Set Data
+</button>
+
+<button type="button" (click)="submit()">
+  Submit
+</button>
+
+<hr>
+
+<p>Name: {{ user().name }}</p>
+<p>Email: {{ user().email }}</p>
