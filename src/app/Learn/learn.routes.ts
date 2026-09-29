@@ -40,4 +40,8 @@ export const LERAN_ROUTES:Routes = [
         path:'modern-signal-forms',
         loadComponent: () => import('./modern-signal-forms/modern-signal-forms').then(c=>c.ModernSignalForms)
     },
+    {
+        path:'component-communication',
+        loadComponent: () => import('./component-communication/component-communication').then(c=>c.ComponentCommunication)
+    },
 ]
