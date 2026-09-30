@@ -428,10 +428,10 @@ RxJS
 NgRx
 ```
 
-- [ ] Local Signals
-- [ ] Shared Signals
-- [ ] Signal-based services
-- [ ] RxJS state
+- [x] Local Signals
+- [x] Shared Signals
+- [x] Signal-based services
+- [x] RxJS state
 - [ ] NgRx Store
 - [ ] Actions
 - [ ] Reducers
@@ -445,14 +445,14 @@ NgRx
 ---
 
 ## ⭐⭐ 14. Lifecycle
-- [ ] `ngOnInit`
-- [ ] `ngOnChanges`
-- [ ] `ngOnDestroy`
-- [ ] `ngAfterViewInit`
-- [ ] `ngAfterContentInit`
-- [ ] `DestroyRef`
-- [ ] `afterNextRender`
-- [ ] `afterEveryRender`
+- [x] `ngOnInit`
+- [x] `ngOnChanges`
+- [x] `ngOnDestroy`
+- [x] `ngAfterViewInit`
+- [x] `ngAfterContentInit`
+- [x] `DestroyRef`
+- [x] `afterNextRender`
+- [x] `afterEveryRender`
 
 ---
 
