@@ -44,4 +44,8 @@ export const LERAN_ROUTES:Routes = [
         path:'component-communication',
         loadComponent: () => import('./component-communication/component-communication').then(c=>c.ComponentCommunication)
     },
+    {
+        path:'state-management',
+        loadComponent: () => import('./state-management/state-management').then(c=>c.StateManagement)
+    },
 ]

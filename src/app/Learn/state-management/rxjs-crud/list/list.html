@@ -1,0 +1,30 @@
+<h2>Employees</h2>
+
+@if (employees$ | async; as employees) {
+
+  @for (employee of employees; track employee.id) {
+
+    <div>
+
+      <strong>
+        {{ employee.name }}
+      </strong>
+
+      <span>
+        {{ employee.email }}
+      </span>
+
+      <span>
+        {{ employee.department }}
+      </span>
+
+      <button
+        (click)="deleteEmployee(employee.id)">
+        Delete
+      </button>
+
+    </div>
+
+  }
+
+}

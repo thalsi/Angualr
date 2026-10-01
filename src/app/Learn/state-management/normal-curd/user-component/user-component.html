@@ -1,0 +1,10 @@
+<!-- user.component.html -->
+
+<h2>Users</h2>
+
+<ul>
+    @for (item of users; track $index) {
+        
+        <li>{{ item.name }}</li>
+    }
+</ul>
