@@ -4,7 +4,7 @@ import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import { provideHttpClient } from '@angular/common/http';
 import { provideStore } from '@ngrx/store';
-import { userReducer } from './Learn/state-management/ngrx/without-api/store/user.reducer';
+import { userReducer } from './Learn/state-management/ngrx/with-api/store/user/user.reducer';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -12,8 +12,8 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideHttpClient(),
     provideStore({
-      users: userReducer
-    })
+      user: userReducer
+    }),
 
   ],
 };

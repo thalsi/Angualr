@@ -1,0 +1,195 @@
+<h2>User Management</h2>
+
+
+<!-- ============================= -->
+<!-- SEARCH -->
+<!-- ============================= -->
+
+<input
+  #searchInput
+  type="text"
+  placeholder="Search user..."
+  (input)="search(searchInput.value)"
+/>
+
+
+<!-- ============================= -->
+<!-- ADD -->
+<!-- ============================= -->
+
+<button
+  type="button"
+  (click)="addUser()"
+>
+  Add User
+</button>
+
+
+<!-- ============================= -->
+<!-- LIST LOADING -->
+<!-- ============================= -->
+
+@if (listLoading$ | async) {
+
+  <p>Loading users...</p>
+
+}
+
+
+<!-- ============================= -->
+<!-- LIST ERROR -->
+<!-- ============================= -->
+
+@if (listError$ | async; as error) {
+
+  <p>
+    Error: {{ error }}
+  </p>
+
+}
+
+
+<!-- ============================= -->
+<!-- USER LIST -->
+<!-- ============================= -->
+
+@if (users$ | async; as users) {
+
+  @for (user of users; track user.id) {
+
+    <div>
+
+      <strong>
+        {{ user.name }}
+      </strong>
+
+      <span>
+        {{ user.email }}
+      </span>
+
+
+      <button
+        type="button"
+        (click)="loadUserDetail(user.id)"
+      >
+        Detail
+      </button>
+
+
+      <button
+        type="button"
+        (click)="updateUser(user.id)"
+      >
+        Update
+      </button>
+
+
+      <button
+        type="button"
+        (click)="deleteUser(user.id)"
+      >
+        Delete
+      </button>
+
+    </div>
+
+  }
+
+}
+
+
+<!-- ============================= -->
+<!-- DETAIL -->
+<!-- ============================= -->
+
+@if (detailLoading$ | async) {
+
+  <p>Loading detail...</p>
+
+}
+
+
+@if (selectedUser$ | async; as user) {
+
+  <hr>
+
+  <h3>User Detail</h3>
+
+  <p>
+    ID: {{ user.id }}
+  </p>
+
+  <p>
+    Name: {{ user.name }}
+  </p>
+
+  <p>
+    Address: {{ user.address }}
+  </p>
+
+  <p>
+    Email: {{ user.email }}
+  </p>
+
+  <p>
+    Mobile: {{ user.mobile }}
+  </p>
+
+}
+
+
+<!-- ============================= -->
+<!-- DELETE LOADING -->
+<!-- ============================= -->
+
+@if (deleteLoading$ | async) {
+
+  <p>Deleting...</p>
+
+}
+
+
+@if (deleteError$ | async; as error) {
+
+  <p>
+    Delete error: {{ error }}
+  </p>
+
+}
+
+
+<!-- ============================= -->
+<!-- PAGINATION -->
+<!-- ============================= -->
+
+<hr>
+
+<button
+  type="button"
+  (click)="changePage(1)"
+>
+  1
+</button>
+
+<button
+  type="button"
+  (click)="changePage(2)"
+>
+  2
+</button>
+
+<button
+  type="button"
+  (click)="changePage(3)"
+>
+  3
+</button>
+
+
+@if (total$ | async; as total) {
+
+  <p>
+    Total users: {{ total }}
+  </p>
+
+}

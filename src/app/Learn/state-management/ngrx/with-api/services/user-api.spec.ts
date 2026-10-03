@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
-import { EmpoleeApi } from './empolee-api';
+import { UserApi } from './user-api';
 
-describe('EmpoleeApi', () => {
-  let service: EmpoleeApi;
+describe('UserApi', () => {
+  let service: UserApi;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(EmpoleeApi);
+    service = TestBed.inject(UserApi);
   });
 
   it('should be created', () => {
